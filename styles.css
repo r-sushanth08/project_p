@@ -1,3 +1,5 @@
+
+/* page outer layout */
 .body{
     font-family: 'Courier New', Courier, monospace;
 }
@@ -5,17 +7,120 @@
 .container{
     display: grid;
     height: auto;
-    grid-template-rows: 75px 50px 500px 250px 350px;
-    grid-template-columns: repeat(4,1fr);
-}
-
-.container,.item{
+    grid-template-rows: 75px 60px auto auto 200px;
+    grid-template-columns: 1fr repeat(2,1fr) 1fr;
     border: 2px solid black;
 }
-.item-1,.item-2,.item-10{
+
+.item{
+    border: 2px solid black;
+}
+
+.header,.navbar,.footer{
     grid-column: 1/5;
 }
 
-.item-4{
-    grid-area: 3 /2 /3 /4;
+.main-content{
+    grid-area: 3 /2 /4 /4;
+}
+
+/* Brand */
+.header h1{
+    text-align: center;
+}
+
+/* navigation bar */
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 4rem;
+    height: 60px;
+}
+
+.menu{
+    display: flex;
+    gap: 80px;
+}
+
+.actions{
+    display: flex;
+    gap: 50px;
+}
+/*3rd row*/
+.left-bar, .right-bar {
+    min-width: 0;
+}
+
+/* main content*/
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    min-width: 0; /* prevents overflow bug */
+}
+
+.main-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.main-image {
+    height: 350px;
+    background-color: #ddd;
+}
+
+/* left bar */
+.left-bar{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.top-heading{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    text-align: center;
+    min-width: 0;
+}
+
+.headline{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    word-wrap: break-word;
+    min-width:0;
+    flex: 1;
+}
+
+.headline p{
+    margin: 0;
+    font-size: 16px;
+}
+
+/* right bar */
+.right-bar{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.trending{
+    text-align: center;
+    min-width: 0;
+}
+
+/* news-section */
+.news-section {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+    min-width: 0; /* critical */
+}
+
+.card-img {
+    height: 200px;
+    background-color: #ddd;
 }
